@@ -111,7 +111,7 @@
     const getOptionLabel = (option) => `${option.title} - ${option.zh_name}`;
     const loadOptions = (keyword) => {
         return new Promise(resolve => {
-            axios.get(`${URL}/lolcounter/champions?search=${keyword}`).then(res => {
+            axios.get(`${URL}/lolcounter/champions?search=${keyword}/`).then(res => {
                 resolve(res.data)
             })
         })
@@ -125,7 +125,7 @@
     };
     const getChampionCounters = (name) => {
         loadingCounters = true;
-        axios.get(`${URL}/lolcounter/champions/${name}/counters`).then(res => {
+        axios.get(`${URL}/lolcounter/champions/${name}/counters/`).then(res => {
             counters = res.data;
             showCounter = counters.hasOwnProperty('strong');
             if (!showCounter) {
