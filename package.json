@@ -32,6 +32,7 @@
   },
   "dependencies": {
     "axios": "^0.19.0",
+    "debounce-promise": "^3.1.2",
     "svelte-select": "^3.2.0",
     "svelte-tabs": "^1.1.0"
   }

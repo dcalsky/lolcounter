@@ -93,35 +93,27 @@
     import {Tabs, Tab, TabList, TabPanel} from 'svelte-tabs';
     import axios from 'axios';
     import {URL, LOGO} from './constants'
+    import debounce from 'debounce-promise'
 
-    const debounceTime = 700;
+    const debounceTime = 500;
     let selectedValue = undefined;
     let showCounter = false;
     let finished = false;
     let processing = false;
     let counters = {};
     let loadingCounters = false;
-    let searchLock = false;
-    const defaultChampions = [
-        {name: 'yasuo', zh_name: '亚索', title: '疾风剑豪'},
-    ];
     const showReadme = () => {
         alert('输入英雄名称，然后查看Counter情况。');
     };
     const getSelectionLabel = (option) => `${option.title} - ${option.zh_name}`;
     const getOptionLabel = (option) => `${option.title} - ${option.zh_name}`;
-    const loadOptions = (keyword) => {
-        if (searchLock || !keyword) return Promise.resolve([]);
-        searchLock = true;
-        setTimeout(() => {
-            searchLock = false;
-        }, debounceTime);
+    const loadOptions = debounce((keyword) => {
         return new Promise(resolve => {
             axios.get(`${URL}/lolcounter/champions?search=${keyword}`).then(res => {
                 resolve(res.data)
             })
         })
-    };
+    }, debounceTime);
     const onSelectChampion = (e) => {
         const champion = e.detail;
         getChampionCounters(champion.name)
