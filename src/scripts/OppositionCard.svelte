@@ -6,7 +6,7 @@
     </div>
 
     <div class="avatar">
-        <img src={`https://game.gtimg.cn/images/lol/act/img/champion/${opposition.name[0].toUpperCase()}${opposition.name.slice(1)}.png`}
+        <img src={`https://game.gtimg.cn/images/lol/act/img/champion/${opposition.upper_name}.png`}
              alt="">
     </div>
 </div>
