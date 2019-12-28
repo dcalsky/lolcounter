@@ -34,7 +34,6 @@
         box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, .1), 0 0 0 1px rgba(10, 10, 10, .02);
         color: #666666;
         background: #ffffff;
-        /*min-height: 80px;*/
         border-radius: 5px;
         margin: 15px 0;
         text-align: left;
