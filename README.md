@@ -13,6 +13,4 @@ You can find the all champions resource in this [gist](https://gist.github.com/d
 `$ npm install && npm dev`
 
 # DEMO
-![index](./images/index.png)
-![search](./images/search.png)
-![counters](./images/counters.png)
+![demo](./images/demo.png)
