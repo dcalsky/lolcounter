@@ -4,7 +4,7 @@ Searching champions, who can strongly counter your opposition.
 
 # Introduction
 1. Enter LOL CHAMPION SELECT interface;
-1. Input the champion name or title of your opposition in this website before confirming;
+1. Input the champion name or title of your opposition in this website before you confirm;
 2. Choose your champion by three lists, including strong against, normal and weak against.
 
 # Online
