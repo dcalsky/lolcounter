@@ -5,74 +5,18 @@
             <h1 class="title">LOL Counter 大师</h1>
             <h2 class="desc">为你的对线保驾护航</h2>
         </div>
-
-        <div class="generate-box">
-            <div class="themed-select">
-                <Select {loadOptions}
-                        optionIdentifier="name"
-                        noOptionsMessage="搜不到该英雄"
-                        {getSelectionLabel}
-                        {getOptionLabel}
-                        on:select={onSelectChampion}
-                        on:clear={onClearChampion}
-                        bind:selectedValue
-                        placeholder="输入对方的英雄名称"
-                />
-            </div>
-            <div>
-                <button class="readme" on:click={showReadme}>
-                    使用说明
-                </button>
-            </div>
-        </div>
     </div>
 
-    {#if showCounter}
-        <Tabs>
-            <TabList>
-                <Tab><span style="color: #66BB6A">克制他</span></Tab>
-                <Tab><span style="color: #666666">一般</span></Tab>
-                <Tab><span style="color: #FF7043">被他克制</span></Tab>
-            </TabList>
+    <div class="cover">
+        <div style="font-weight: 500; font-size: 20px; margin-bottom: 20px">
+            请移步微信（左）/QQ小程序（右）
+        </div>
+        <div class="qrcodes">
+            <img src="https://bbq.noddl.me/icons/rice-weapp.jpg" alt="">
+            <img src="https://bbq.noddl.me/icons/rice-qq.png" alt="">
+        </div>
 
-            <TabPanel>
-                <ul>
-                    {#each counters['weak'] as item}
-                        <li>
-                            <OppositionCard champion={selectedValue} opposition={item.opposition}
-                                            win_rate={item.win_rate} times={item.times}/>
-                        </li>
-                    {/each}
-                </ul>
-            </TabPanel>
-
-            <TabPanel>
-                <ul>
-                    {#each counters['equal'] as item}
-                        <li>
-                            <OppositionCard champion={selectedValue} opposition={item.opposition}
-                                            win_rate={item.win_rate} times={item.times}/>
-                        </li>
-                    {/each}
-                </ul>
-            </TabPanel>
-
-            <TabPanel>
-                <ul>
-                    {#each counters['strong'] as item}
-                        <li>
-                            <OppositionCard champion={selectedValue} opposition={item.opposition}
-                                            win_rate={item.win_rate} times={item.times}/>
-                        </li>
-                    {/each}
-                </ul>
-            </TabPanel>
-        </Tabs>
-    {/if}
-
-    {#if loadingCounters}
-        加载对战信息中...
-    {/if}
+    </div>
 
     <footer>
         <p class="tip">1. 胜率不代表一切</p>
@@ -144,6 +88,14 @@
         --border: 2px solid #2979FF;
         --borderRadius: 8px;
         margin: 20px 0;
+    }
+
+    .qrcodes {
+        img {
+            width: 240px;
+            border-radius: 15px;
+            margin: 0 10px;
+        }
     }
 
     .container {
