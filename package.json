@@ -23,7 +23,7 @@
     "style-loader": "^1.0.0",
     "svelte-loader": "^2.13.6",
     "webpack": "^4.41.2",
-    "webpack-cli": "^3.3.9",
+    "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.8.2",
     "webpack-merge": "^4.2.2",
     "autoprefixer": "^9.7.3",
